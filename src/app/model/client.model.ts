@@ -5,8 +5,8 @@ export class Client extends Person{
   constructor(id: number,
               firstname: string,
               lastname: string,
-              active?: boolean,
-              age?: number,
+              active: boolean = true,
+              age: number = 0,
               public products: Product[] = []) {
     super(id, firstname, lastname, active, age);
   }

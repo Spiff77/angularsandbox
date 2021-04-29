@@ -1,6 +1,12 @@
 <section>
   <button (click)="increment()">+1</button>
   {{count}}
+  <br>
+  {{prenom}}
+  <input type="text" [(ngModel)]="client.firstname">
+  <button (click)="changePrenom()">change prenom</button>
+
+  <br>
   <h3>Client</h3>
   <ul>
     <li>{{client.id}}</li>

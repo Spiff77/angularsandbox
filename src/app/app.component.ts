@@ -11,8 +11,11 @@ import {Supplier} from './model/supplier.model';
 export class AppComponent {
 
   count = 0;
-
-  client = new Client(10, 'Jean', 'Jacques', true, 20);
+  prenom = 'Thomas';
+  /**
+   * Faire un input#text qui change la valeur de client.firstname
+   */
+  client = new Client(10, 'Jean', 'Jacques', true);
   product = new Product(10, 'Jean', 'Vetements', 'C\'est cool', 15,  true, 10);
   supplier = new Supplier(10, 'Pierre', 'Paul', 'Google', '123456789', 200000, true, 25);
 
@@ -22,5 +25,11 @@ export class AppComponent {
 
   toggle(): void {
     this.client.active = !this.client.active;
+    this.client.age = 4;
   }
+
+  changePrenom(): void {
+    this.prenom = 'Luc';
+  }
+
 }
