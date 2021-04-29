@@ -1,4 +1,6 @@
 <section>
+  <button (click)="increment()">+1</button>
+  {{count}}
   <h3>Client</h3>
   <ul>
     <li>{{client.id}}</li>
@@ -7,6 +9,8 @@
     <li>{{client.active}}</li>
     <li>{{client.age}}</li>
   </ul>
+  <button (click)="toggle()">Toggle</button>
+
 </section>
 <div>
   <h3>Product</h3>
