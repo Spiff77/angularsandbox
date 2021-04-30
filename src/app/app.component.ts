@@ -19,6 +19,8 @@ export class AppComponent {
   product = new Product(10, 'Jean', 'Vetements', 'C\'est cool', 15,  true, 10);
   supplier = new Supplier(10, 'Pierre', 'Paul', 'Google', '123456789', 200000, true, 25);
 
+  pColor = '';
+
   increment(): void {
     this.count++;
   }
@@ -32,4 +34,7 @@ export class AppComponent {
     this.prenom = 'Luc';
   }
 
+  methode(): void {
+
+  }
 }

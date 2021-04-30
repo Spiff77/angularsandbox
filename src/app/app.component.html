@@ -3,11 +3,20 @@
   {{count}}
   <br>
   {{prenom}}
-  <input type="text" [(ngModel)]="client.firstname">
+  <input type="text" [(ngModel)]="client.firstname" [disabled]="!client.active">
   <button (click)="changePrenom()">change prenom</button>
-
   <br>
-  <h3>Client</h3>
+
+  <select name="textColor" [(ngModel)]="pColor">
+    <option value="">SELECT COLOR PLEASE</option>
+    <option value="red">Rouge</option>
+    <option value="yellow">Jaune</option>
+    <option value="green">Vert</option>
+  </select>
+
+  <p [style.color]="pColor">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi debitis deleniti dicta dignissimos doloribus dolorum ea est excepturi hic iure, odit qui recusandae, rem sit temporibus, ullam vitae voluptas!</p>
+
+  <h3 [style.backgroundColor]="client.active ? 'green' : 'red'">Client</h3>
   <ul>
     <li>{{client.id}}</li>
     <li>{{client.firstname}}</li>
@@ -15,6 +24,7 @@
     <li>{{client.active}}</li>
     <li>{{client.age}}</li>
   </ul>
+  <div><input type="checkbox" [(ngModel)]="client.active">Activate</div>
   <button (click)="toggle()">Toggle</button>
 
 </section>
