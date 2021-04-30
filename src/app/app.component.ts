@@ -12,14 +12,19 @@ export class AppComponent {
 
   count = 0;
   prenom = 'Thomas';
+
   /**
    * Faire un input#text qui change la valeur de client.firstname
    */
   client = new Client(10, 'Jean', 'Jacques', true);
   product = new Product(10, 'Jean', 'Vetements', 'C\'est cool', 15,  true, 10);
-  supplier = new Supplier(10, 'Pierre', 'Paul', 'Google', '123456789', 200000, true, 25);
+  supplier = new Supplier(10, 'Pierre', 'Paul', 'Google', '123456789', 3000, true, 25);
 
   pColor = '';
+
+  constructor() {
+    console.log(this.client.active);
+  }
 
   increment(): void {
     this.count++;
@@ -34,7 +39,13 @@ export class AppComponent {
     this.prenom = 'Luc';
   }
 
-  methode(): void {
-
+  getSupplierStyle(): string {
+    if (this.supplier.ca < 1000) {
+      return 'low';
+    } else if (this.supplier.ca >= 1000 && this.supplier.ca < 5000){
+      return  'medium';
+    }else{
+      return 'high';
+    }
   }
 }

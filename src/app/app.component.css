@@ -1,4 +1,20 @@
-:host{
-  display:block;
-  background: linear-gradient(#db9697, #e5d791);
+.active {
+  color: green;
+  border:1px solid green;
+}
+.disabled{
+  color: red;
+  border:1px solid red;
+  font-weight: bold;
+}
+.low{
+  color: red;
+  font-weight: bold;
+}
+.medium{
+  color: orange;
+  font-weight: bold;
+}
+.high{
+  color: green;
 }

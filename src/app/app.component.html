@@ -6,7 +6,6 @@
   <input type="text" [(ngModel)]="client.firstname" [disabled]="!client.active">
   <button (click)="changePrenom()">change prenom</button>
   <br>
-
   <select name="textColor" [(ngModel)]="pColor">
     <option value="">SELECT COLOR PLEASE</option>
     <option value="red">Rouge</option>
@@ -16,8 +15,8 @@
 
   <p [style.color]="pColor">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi debitis deleniti dicta dignissimos doloribus dolorum ea est excepturi hic iure, odit qui recusandae, rem sit temporibus, ullam vitae voluptas!</p>
 
-  <h3 [style.backgroundColor]="client.active ? 'green' : 'red'">Client</h3>
-  <ul>
+  <h3>Client</h3>
+  <ul [ngClass]="this.client.active ? 'active' : 'disabled'">
     <li>{{client.id}}</li>
     <li>{{client.firstname}}</li>
     <li>{{client.lastname}}</li>
@@ -41,7 +40,7 @@
 </div>
 
 <h3>Supplier</h3>
-<ul>
+<ul [ngClass]="getSupplierStyle()">
   <li>{{supplier.id}}</li>
   <li>{{supplier.bankAccountNumber}}</li>
   <li>{{supplier.ca}}</li>
