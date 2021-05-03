@@ -4,6 +4,7 @@ import {Product} from './model/product.model';
 import {Supplier} from './model/supplier.model';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
@@ -47,5 +48,9 @@ export class AppComponent {
     }else{
       return 'high';
     }
+  }
+
+  doSomething(event: any): void {
+    console.log(event.target.innerText);
   }
 }
